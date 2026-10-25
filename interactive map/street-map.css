@@ -1,0 +1,34 @@
+#map-stage{height:570px;min-height:570px;perspective:none;background:#e9eee6}
+#map-stage>.scene,#map-stage>.map-badge,#map-stage>.view-toggle,#map-stage>.simulation-tag,#map-stage>.distance-context,#map-stage>.map-key,#map-stage>.map-controls{display:none}
+#street-map{position:absolute;inset:0;z-index:0;background:#e9eee6;font-family:inherit}
+#street-map:not(.map-ready) .maplibregl-canvas{visibility:hidden}
+.street-heading{position:absolute;left:18px;top:18px;z-index:450;background:#fffffff2;border:1px solid #dbe5d5;border-radius:11px;padding:13px 17px;box-shadow:0 3px 15px #214c3210;pointer-events:none;max-width:calc(100% - 95px)}
+.street-heading strong{display:block;font-size:19px;letter-spacing:-.5px;margin:5px 0;color:#1e513c}.street-heading>span:last-child{font-size:10px;color:#6a7b6c}
+.street-tools{position:absolute;z-index:450;left:18px;top:18px;display:flex;gap:7px}.street-tools button{background:white;border:1px solid #c8d6c3;box-shadow:0 2px 5px #214c3210;border-radius:7px;font-size:11px;font-weight:650;padding:9px 12px}.street-tools button[aria-pressed="true"]{background:var(--green);color:white}
+.street-legend{position:absolute;z-index:450;bottom:29px;left:18px;background:#fffffff0;padding:10px 12px;border:1px solid #dae3d5;border-radius:7px;display:flex;gap:13px;font-size:9px;color:#677761;pointer-events:none}.street-legend span{display:flex;align-items:center;gap:6px}
+.legend-terminal,.legend-stop{width:8px;height:8px;border-radius:50%;background:var(--green)}.legend-stop{background:#f0bc55;border:1px solid #91692c}
+.map-error{position:absolute;z-index:500;bottom:85px;left:18px;right:65px;background:#fff0df;border:1px solid #ddae83;color:#8a4224;font-size:11px;line-height:1.6;border-radius:7px;padding:10px}.map-error:empty{display:none}
+.terminal-pin,.candidate-pin{width:26px;height:26px;background:var(--green);border:3px solid white;border-radius:50%;box-shadow:0 2px 9px #183f3555;display:grid;place-items:center;color:white;font-size:11px;font-weight:750}
+.candidate-pin{width:23px;height:23px;background:#f2bd55;color:#5c431b;font-size:10px;border-width:2px}
+.stop-tooltip{font-family:inherit;font-size:10px;font-weight:650;color:var(--green);border:1px solid #d7e1cf;box-shadow:0 2px 5px #1c402012}
+.street-bus-icon{background:transparent;border:0;perspective:400px}
+.street-bus-icon .bus-model{left:0;top:0;transform:rotateX(48deg) rotateZ(-35deg) scale3d(.65,.65,.65)}
+.street-bus-icon{width:36px;height:36px;z-index:5}
+.street-bus-icon .bus-model{transform:rotateX(35deg) scale3d(.65,.65,.65)}
+.camera-hint{position:absolute;z-index:2;left:18px;bottom:85px;font-size:9px;line-height:1.7;color:#4a6250;background:#ffffffe8;padding:7px 10px;border-radius:6px;pointer-events:none}
+.street-tools{flex-wrap:wrap;max-width:calc(100% - 80px)}
+.street-tools a{background:white;border:1px solid #c8d6c3;border-radius:7px;font-size:11px;font-weight:650;padding:9px 12px;text-decoration:none}
+.street-tools a[aria-disabled="true"]{opacity:.5;pointer-events:none}
+.pov-status{position:absolute;z-index:2;left:18px;right:60px;bottom:150px;background:#164f3deb;color:#f6faef;padding:10px 12px;border-radius:8px;font-size:10px;line-height:1.7;pointer-events:none}
+.maplibregl-popup-content{font-family:inherit;font-size:11px;line-height:1.8;color:var(--ink);max-width:260px}.maplibregl-popup-content small{color:#7f7455}.maplibregl-ctrl-attrib{font-size:10px}.maplibregl-canvas:focus-visible{outline:3px solid var(--gold);outline-offset:-3px}
+@media(max-width:760px){.street-tools{top:12px}.street-tools button{padding:8px;font-size:10px}}
+.location-info{border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:14px}
+.location-info p{font-size:11px;color:var(--green);margin:0 0 5px;font-weight:600}
+.location-info small{display:block;color:var(--muted);font-size:9px;line-height:1.7}
+.user-location-dot{width:18px;height:18px;background:#287ce5;border:3px solid white;border-radius:50%;box-shadow:0 0 0 2px #287ce555,0 2px 8px #193f6c44;z-index:10}
+.stops-panel{padding:23px 25px;background:#fff;border-top:1px solid var(--line)}.stops-header{display:flex;justify-content:space-between;gap:10px;align-items:center}.stops-panel h2{font-size:20px;letter-spacing:-.5px;margin:5px 0}.candidate-tag{font-size:9px;color:#8a652c;background:#fff6e3;border:1px solid #ead6ac;border-radius:20px;padding:7px 9px;white-space:nowrap}
+.stops-disclaimer{font-size:10px;color:#7b7965;line-height:1.8;max-width:750px;margin:10px 0 18px}
+.stop-list{list-style:none;margin:0;padding:0}.stop-row{position:relative;margin-left:11px;padding:0 0 0 24px;border-left:2px solid #e1e8d9}.stop-row:last-child{border-color:transparent}.stop-row:before{content:"";position:absolute;top:15px;left:-6px;width:10px;height:10px;border-radius:50%;background:#efba51;border:2px solid white;box-shadow:0 0 0 1px #d5bf90}.stop-row.terminal:before{background:var(--green);box-shadow:0 0 0 1px #8eb69a}.stop-row.passed:before{background:#176549}
+.stop-row button{display:flex;justify-content:space-between;gap:14px;width:100%;border:0;border-bottom:1px solid #edf0e8;background:none;padding:11px 0 13px;text-align:left}.stop-row button:hover strong{color:var(--green);text-decoration:underline}.stop-row:last-child button{border:0}.stop-row strong{font-size:12px;font-weight:650}.stop-row small{display:block;font-size:9px;color:var(--muted);margin-top:5px;line-height:1.6}.stop-timing{text-align:right;white-space:nowrap;font-size:10px;color:var(--green)}
+.leaflet-control-zoom{border:1px solid #cbd9c5!important;box-shadow:0 2px 8px #24462e18!important}.leaflet-control-scale-line{background:#ffffffdf;font-size:10px}.leaflet-popup-content{font-family:inherit;line-height:1.7;min-width:160px}.leaflet-popup-content strong{color:var(--green)}.leaflet-popup-content small{color:#7f7455}
+@media(max-width:760px){#map-stage{height:500px;min-height:500px}.street-heading{left:12px;top:12px;padding:11px 13px}.street-heading strong{font-size:17px}.street-tools{left:12px;top:116px}.street-legend{left:12px;bottom:27px;gap:7px;font-size:8px;max-width:calc(100% - 24px);flex-wrap:wrap;padding:8px}.street-legend span:last-child{width:100%}.stops-panel{padding:20px 17px}.candidate-tag{max-width:90px;white-space:normal;text-align:center;line-height:1.5}.stop-timing{font-size:9px}.stop-row button{gap:7px}.stop-row strong{font-size:11px}}
